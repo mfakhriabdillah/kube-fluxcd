@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-web-app-2
+spec:
+  selector:
+    matchLabels:
+      app: nodejs-web-app-2
+  template:
+    metadata:
+      labels:
+        app: nodejs-web-app-2
+    spec:
+      containers:
+      - name: nodejs-web-app-2
+        image: gcr.io/striking-optics-378307/nodejs-web:2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+        - name: gcr-credentials

@@ -1,0 +1,7 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1 # bedanya dengan helm biasa, version ini kita menggunakan flux
+kind: HelmRepository
+metadata:
+  name: ingress-nginx
+spec:
+  interval: 1m0s
+  url: https://kubernetes.github.io/ingress-nginx # kita menggunakan helm chart yang sudah ada
